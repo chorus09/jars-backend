@@ -74,6 +74,42 @@
               ]
             }
           }
+        },
+        {
+          "name": "Find Flight By Name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/flights/findByName/Airbus",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "flights",
+                "findByName",
+                "Airbus"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Find Flight By Name (Uppercase Pipe)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/flights/findByNameUpper/Airbus",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "flights",
+                "findByNameUpper",
+                "Airbus"
+              ]
+            }
+          }
         }
       ]
     },
