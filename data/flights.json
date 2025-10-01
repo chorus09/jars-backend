@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Airbus A320",
+    "from": "București",
+    "to": "Paris",
+    "departureTime": "2025-10-01T08:00:00",
+    "arrivalTime": "2025-10-01T10:30:00",
+    "price": 150,
+    "status": "available"
+  },
+  {
+    "id": 2,
+    "name": "Boeing 737",
+    "from": "Chișinău",
+    "to": "Roma",
+    "departureTime": "2025-10-02T09:15:00",
+    "arrivalTime": "2025-10-02T11:45:00",
+    "price": 200,
+    "status": "in-flight"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "flightId": 1,
+    "clientName": "Ion Popescu",
+    "seat": "12A",
+    "price": 150
+  },
+  {
+    "id": 2,
+    "flightId": 2,
+    "clientName": "Maria Ionescu",
+    "seat": "7B",
+    "price": 200
+  }
+]
