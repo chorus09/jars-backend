@@ -12,5 +12,61 @@
     "clientName": "Maria Ionescu",
     "seat": "7B",
     "price": 200
+  },
+  {
+    "id": 3,
+    "flightId": 3,
+    "clientName": "Andrei Vasile",
+    "seat": "15C",
+    "price": 250
+  },
+  {
+    "id": 4,
+    "flightId": 4,
+    "clientName": "Elena Georgescu",
+    "seat": "3D",
+    "price": 180
+  },
+  {
+    "id": 5,
+    "flightId": 5,
+    "clientName": "Cristina Pavel",
+    "seat": "20F",
+    "price": 220
+  },
+  {
+    "id": 6,
+    "flightId": 6,
+    "clientName": "Mihai Stancu",
+    "seat": "8A",
+    "price": 600
+  },
+  {
+    "id": 7,
+    "flightId": 7,
+    "clientName": "Alina Dobre",
+    "seat": "14E",
+    "price": 900
+  },
+  {
+    "id": 8,
+    "flightId": 8,
+    "clientName": "Dan Iliescu",
+    "seat": "5B",
+    "price": 170
+  },
+  {
+    "id": 9,
+    "flightId": 9,
+    "clientName": "Ioana Marinescu",
+    "seat": "10C",
+    "price": 120
+  },
+  {
+    "id": 10,
+    "flightId": 10,
+    "clientName": "George Radu",
+    "seat": "18D",
+    "price": 190
   }
 ]

@@ -18,5 +18,85 @@
     "arrivalTime": "2025-10-02T11:45:00",
     "price": 200,
     "status": "in-flight"
+  },
+  {
+    "id": 3,
+    "name": "Airbus A330",
+    "from": "Cluj",
+    "to": "Londra",
+    "departureTime": "2025-10-03T14:00:00",
+    "arrivalTime": "2025-10-03T16:45:00",
+    "price": 250,
+    "status": "available"
+  },
+  {
+    "id": 4,
+    "name": "Boeing 777",
+    "from": "Iași",
+    "to": "Berlin",
+    "departureTime": "2025-10-04T06:30:00",
+    "arrivalTime": "2025-10-04T08:50:00",
+    "price": 180,
+    "status": "available"
+  },
+  {
+    "id": 5,
+    "name": "Embraer E190",
+    "from": "București",
+    "to": "Madrid",
+    "departureTime": "2025-10-05T11:00:00",
+    "arrivalTime": "2025-10-05T14:30:00",
+    "price": 220,
+    "status": "delayed"
+  },
+  {
+    "id": 6,
+    "name": "Boeing 747",
+    "from": "Timișoara",
+    "to": "Dubai",
+    "departureTime": "2025-10-06T22:00:00",
+    "arrivalTime": "2025-10-07T05:00:00",
+    "price": 600,
+    "status": "available"
+  },
+  {
+    "id": 7,
+    "name": "Airbus A350",
+    "from": "București",
+    "to": "New York",
+    "departureTime": "2025-10-07T09:00:00",
+    "arrivalTime": "2025-10-07T17:00:00",
+    "price": 900,
+    "status": "in-flight"
+  },
+  {
+    "id": 8,
+    "name": "Boeing 787",
+    "from": "Chișinău",
+    "to": "Istanbul",
+    "departureTime": "2025-10-08T19:30:00",
+    "arrivalTime": "2025-10-08T21:00:00",
+    "price": 170,
+    "status": "available"
+  },
+  {
+    "id": 9,
+    "name": "ATR 72",
+    "from": "Cluj",
+    "to": "Viena",
+    "departureTime": "2025-10-09T05:45:00",
+    "arrivalTime": "2025-10-09T07:15:00",
+    "price": 120,
+    "status": "available"
+  },
+  {
+    "id": 10,
+    "name": "Airbus A321",
+    "from": "București",
+    "to": "Amsterdam",
+    "departureTime": "2025-10-10T13:00:00",
+    "arrivalTime": "2025-10-10T15:30:00",
+    "price": 190,
+    "status": "cancelled"
   }
 ]
