@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -14,5 +14,13 @@ export class ReservationsService {
 
   findAll() {
     return this.reservations;
+  }
+
+  findOne(id: number) {
+    const reservation = this.reservations.find(r => r.id === id);
+    if (!reservation) {
+      throw new NotFoundException(`Reservation with id ${id} not found`);
+    }
+    return reservation;
   }
 }
