@@ -24,6 +24,20 @@ export class FlightsService {
     }
     return flight;
   }
+  
+  updateFlight(id: number, updateData: Partial<CreateFlightDto>) {
+    const flightIndex = this.flights.findIndex(f => f.id === id);
+    if (flightIndex === -1) {
+      throw new NotFoundException(`Flight with id ${id} not found`);
+    }
+
+    this.flights[flightIndex] = {
+      ...this.flights[flightIndex],
+      ...updateData,
+    };
+
+    return this.flights[flightIndex];
+  }
 
   search(query: {
     name?: string;

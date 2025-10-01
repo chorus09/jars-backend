@@ -23,4 +23,10 @@ export class ReservationsService {
     }
     return reservation;
   }
+
+  findByUser(username: string) {
+    return this.reservations.filter(r =>
+      r.clientName.toLowerCase().includes(username.toLowerCase())
+    );
+  }
 }
