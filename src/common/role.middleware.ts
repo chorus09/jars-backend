@@ -5,14 +5,15 @@ import { Request, Response, NextFunction } from 'express';
 export class RoleMiddleware implements NestMiddleware {
   use(req: Request, res: Response, next: NextFunction) {
     const role = req.headers['x-role'];
+    const url = req.originalUrl;
 
-    if (req.path.startsWith('/admin')) {
+    if (url.startsWith('/admin')) {
       if (role !== 'admin') {
         throw new ForbiddenException('Access denied: Admins only');
       }
     }
 
-    if (req.path.startsWith('/reservations/my')) {
+    if (url.startsWith('/reservations/my')) {
       if (role !== 'client' && role !== 'admin') {
         throw new ForbiddenException('Access denied: Clients only');
       }
