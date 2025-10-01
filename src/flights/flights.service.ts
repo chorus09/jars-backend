@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -14,5 +14,13 @@ export class FlightsService {
 
   findAll() {
     return this.flights;
+  }
+
+  findOne(id: number) {
+    const flight = this.flights.find(f => f.id === id);
+    if (!flight) {
+      throw new NotFoundException(`Flight with id ${id} not found`);
+    }
+    return flight;
   }
 }
