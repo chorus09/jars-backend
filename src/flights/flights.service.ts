@@ -24,7 +24,7 @@ export class FlightsService {
     }
     return flight;
   }
-  
+
   updateFlight(id: number, updateData: Partial<CreateFlightDto>) {
     const flightIndex = this.flights.findIndex(f => f.id === id);
     if (flightIndex === -1) {
@@ -37,6 +37,12 @@ export class FlightsService {
     };
 
     return this.flights[flightIndex];
+  }
+
+  findByName(name: string) {
+    return this.flights.filter(f =>
+      f.name.toLowerCase().includes(name.toLowerCase())
+    );
   }
 
   search(query: {

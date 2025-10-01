@@ -3,7 +3,7 @@ import { FlightsService } from './flights.service';
 
 @Controller('flights')
 export class FlightsController {
-  constructor(private readonly flightsService: FlightsService) {}
+  constructor(private readonly flightsService: FlightsService) { }
 
   @Get('list')
   getAllFlights() {
@@ -13,6 +13,11 @@ export class FlightsController {
   @Get('details/:id')
   getFlightDetails(@Param('id', ParseIntPipe) id: number) {
     return this.flightsService.findOne(id);
+  }
+  
+  @Get('findByName/:name')
+  findByName(@Param('name') name: string) {
+    return this.flightsService.findByName(name);
   }
 
   @Get('search')
