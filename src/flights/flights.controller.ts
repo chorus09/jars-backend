@@ -1,5 +1,6 @@
 import { Controller, Get, Param, ParseIntPipe, Query } from '@nestjs/common';
 import { FlightsService } from './flights.service';
+import { UppercasePipe } from 'src/common/pipes/uppercase.pipe';
 
 @Controller('flights')
 export class FlightsController {
@@ -13,6 +14,11 @@ export class FlightsController {
   @Get('details/:id')
   getFlightDetails(@Param('id', ParseIntPipe) id: number) {
     return this.flightsService.findOne(id);
+  }
+
+  @Get('findByNameUpper/:name')
+  findByNameUpper(@Param('name', UppercasePipe) name: string) {
+    return this.flightsService.findByName(name);
   }
   
   @Get('findByName/:name')
