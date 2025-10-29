@@ -1,0 +1,300 @@
+{
+  "info": {
+    "name": "Airline App API v2",
+    "description": "Colec\u021bie actualizat\u0103 pentru testarea API-ului complet (flights, reservations, users) cu roluri admin/client.",
+    "_postman_id": "airline-app-v2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Flights (Public)",
+      "item": [
+        {
+          "name": "Get Flights List",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/flights/list"
+          }
+        },
+        {
+          "name": "Get Flight Details",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/flights/details/1"
+          }
+        },
+        {
+          "name": "Search Flights",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/flights/search?from=Bucharest&to=Rome&minPrice=100"
+          }
+        },
+        {
+          "name": "Find Flight By Name",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/flights/findByName/Airbus"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin Flights",
+      "item": [
+        {
+          "name": "Get All Flights (Admin)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-role",
+                "value": "admin"
+              }
+            ],
+            "url": "{{baseUrl}}/admin/flights/list"
+          }
+        },
+        {
+          "name": "Create Flight (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-role",
+                "value": "admin"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Flight A500\",\n  \"from\": \"Paris\",\n  \"to\": \"London\",\n  \"departureTime\": \"2025-11-01T10:00:00\",\n  \"arrivalTime\": \"2025-11-01T12:00:00\",\n  \"price\": 400,\n  \"status\": \"scheduled\"\n}"
+            },
+            "url": "{{baseUrl}}/admin/flights/create"
+          }
+        },
+        {
+          "name": "Update Flight (Admin)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-role",
+                "value": "admin"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"status\": \"delayed\" }"
+            },
+            "url": "{{baseUrl}}/admin/flights/update/1"
+          }
+        },
+        {
+          "name": "Delete Flight (Admin)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-role",
+                "value": "admin"
+              }
+            ],
+            "url": "{{baseUrl}}/admin/flights/delete/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reservations (Client)",
+      "item": [
+        {
+          "name": "Get All Reservations (Public)",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/reservations/list"
+          }
+        },
+        {
+          "name": "Get Reservation Details",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/reservations/details/1"
+          }
+        },
+        {
+          "name": "Get My Reservations (Client)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-role",
+                "value": "client"
+              }
+            ],
+            "url": "{{baseUrl}}/reservations/my/client1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin Reservations",
+      "item": [
+        {
+          "name": "Get All Reservations (Admin)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-role",
+                "value": "admin"
+              }
+            ],
+            "url": "{{baseUrl}}/admin/reservations/list"
+          }
+        },
+        {
+          "name": "Create Reservation (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-role",
+                "value": "admin"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"flightId\": 1,\n  \"clientName\": \"client1\",\n  \"seat\": \"B2\",\n  \"price\": 200,\n  \"clientEmail\": \"client1@example.com\"\n}"
+            },
+            "url": "{{baseUrl}}/admin/reservations/create"
+          }
+        },
+        {
+          "name": "Update Reservation (Admin)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-role",
+                "value": "admin"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"price\": 250 }"
+            },
+            "url": "{{baseUrl}}/admin/reservations/update/1"
+          }
+        },
+        {
+          "name": "Delete Reservation (Admin)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-role",
+                "value": "admin"
+              }
+            ],
+            "url": "{{baseUrl}}/admin/reservations/delete/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users (Admin)",
+      "item": [
+        {
+          "name": "Get Users List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-role",
+                "value": "admin"
+              }
+            ],
+            "url": "{{baseUrl}}/users/list"
+          }
+        },
+        {
+          "name": "Create User (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-role",
+                "value": "admin"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"newclient\",\n  \"password\": \"client123\",\n  \"role\": \"client\",\n  \"email\": \"newclient@example.com\"\n}"
+            },
+            "url": "{{baseUrl}}/users/create"
+          }
+        },
+        {
+          "name": "Update User (Admin)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-role",
+                "value": "admin"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"password\": \"newpass123\" }"
+            },
+            "url": "{{baseUrl}}/users/update/2"
+          }
+        },
+        {
+          "name": "Delete User (Admin)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-role",
+                "value": "admin"
+              }
+            ],
+            "url": "{{baseUrl}}/users/delete/3"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ]
+}
