@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "password": "admin123",
+    "role": "admin",
+    "email": "admin@travelapp.com"
+  },
+  {
+    "id": 2,
+    "username": "client1",
+    "password": "clientpass1",
+    "role": "client",
+    "email": "client1@example.com"
+  },
+  {
+    "id": 3,
+    "username": "client2",
+    "password": "clientpass2",
+    "role": "client",
+    "email": "client2@example.com"
+  },
+  {
+    "id": 4,
+    "username": "manager",
+    "password": "manager123",
+    "role": "admin",
+    "email": "manager@travelapp.com"
+  },
+  {
+    "id": 5,
+    "username": "guest",
+    "password": "guest000",
+    "role": "client",
+    "email": "guest@travelapp.com"
+  }
+]
